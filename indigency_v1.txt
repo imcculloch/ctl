@@ -1,0 +1,79 @@
+Title: Indigency "Flowchart"
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Indigency "Flowchart"</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/level/2/#mission_p1">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if you qualify for appointed counsel in [insert state name].</p>
+    Title: Qualification for Hawaii Public Defender 
+Author:Ian McCulloch 
+Description:
+
+Q(1): Do you want a Public Defender?
+A:Yes 
+	Q(1.1):GOTO:stamps
+A:No 
+	Q(1.2): then look for private counsel
+Q(stamps): Are you eligible for or currently receive food stamps (TANF)?
+A: Yes
+	Q(2.1):GOTO:eligible
+A: No
+	Q(2.2):GOTO:earners
+Q(earners): How many people are in your household?
+A:1
+	Q(3.1):GOTO:one
+A:2 
+	Q(3.2):GOTO:two
+A:3
+	Q(3.3):GOTO:three
+A:4
+	Q(3.4):GOTO:four
+A:5  
+	Q(3.5):GOTO:five
+A:6
+	Q(3.6):GOTO:six
+A:7
+	Q(3.7):GOTO:seven
+A:8
+	Q(3.8):GOTO:eight
+Q(one):Do you make more than $15,630?
+A:yes
+	Q(4.1):GOTO:not 
+A:No
+	Q(4.2):GOTO:eligible
+Q(two):Do you make more than $21,060?
+A:Yes
+	Q(5.1):GOTO:not 
+A:No
+	Q(5.2):GOTO:eligible
+Q(three):Do you make more than $26,490?
+A:Yes
+	Q(6.1):GOTO:not
+A:No
+	Q(6.2):GOTO:eligible
+Q(four):Do you make more than $31,920?
+A:Yes
+	Q(7.1):GOTO:not 
+A:No
+	Q(7.2):GOTO:eligible
+Q(five):Do you make more than $37,350?
+A:Yes
+	Q(8.1):GOTO:not 
+A:No
+	Q(8.2):GOTO:eligible
+Q(six):Do you make more than $42,780?
+A:Yes
+	Q(9.1):GOTO:not 
+A:No
+	Q(9.2):GOTO:eligible
+Q(seven):Do you make more than $48,210?
+A:Yes
+	Q(10.1):GOTO:not 
+A:No
+	Q(10.2):GOTO:eligible
+Q(eight):Do you make more than $53,640?
+A:Yes
+	Q(11.1):GOTO:not 
+A:No
+	Q(11.2):GOTO:eligible
+Q(eligible):You should be qualified to get a public defender and should request one at the next hearing.
+Q(not):You are not instantly able to obtain a public defender, however you can file an application on the public defenders website.
