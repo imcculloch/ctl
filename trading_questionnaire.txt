@@ -1,0 +1,192 @@
+Title: Trading Questionnaire 
+Author: Ian McCulloch, Relay Tx, Inc. Legal Department
+Before: Trading Questionnaire:
+Q(intro): What would you like to do?
+
+A: Trade Company Stocks (buy or sell)
+	Q(1.1):GOTO:10b51
+A: Exercise Stock Options
+	Q(1.2):GOTO:exercise
+A: Enroll in Employee Stock Purchasing Program (ESPP)
+	Q(1.3):GOTO:ESPP
+A: Set up a 10b5-1 plan
+	Q(1.4):GOTO:blackout2
+A: Other
+	Q(1.5):GOTO:ask
+
+Q(10b51): Do you want to trade under an approved 10b5-1 plan on E*TRADE? 
+A: Yes
+	Q(2.1):GOTO:automatic
+A: No
+	Q(2.2):GOTO:blackout
+A: I don't know
+	Q(2.3):GOTO:learn10b512
+
+Q(blackout): Is there a company-wide "blackout" on stock trading? (You will have received email notification)
+
+A: Yes
+	Q(3.1):GOTO:stop2
+A: No
+	Q(3.2):GOTO:mnpi
+A: Unsure
+	Q(3.3):GOTO:ask
+
+Q(blackout2): Is there a company-wide "blackout" on stock trading? (You will have received email notification)
+
+A: Yes
+	Q(4.1):GOTO:stop3
+A: No
+	Q(4.2):GOTO:mnpi2
+A: Unsure
+	Q(4.3):GOTO:ask
+
+Q(blackout3): Is there a company-wide "blackout" on stock trading? (You will have received email notification)
+
+A: Yes
+	Q(5.1):GOTO:stop2
+A: No
+	Q(5.2):GOTO:mnpi3
+A: Unsure
+	Q(5.3):GOTO:ask
+
+Q(mnpi): Are you in possession of any Material Non-Public Information (MNPI)? 
+
+A: Yes
+	Q(6.1):GOTO:stop
+A: No
+	Q(6.2):GOTO:setup
+A: I don't know
+	Q(6.3):GOTO:learnmnpi
+
+Q(mnpi2): Are you in possession of any Material Non-Public Information (MNPI)? 
+
+A: Yes
+	Q(7.1):GOTO:stop
+A: No
+	Q(7.2):GOTO:setupinstructions
+A: I don't know
+	Q(7.3):GOTO:learnmnpi
+Q(mnpi3): Are you in possession of any Material Non-Public Information (MNPI)? 
+
+A: Yes
+	Q(8.1):GOTO:stop
+A: No
+	Q(8.2):GOTO:request
+A: I don't know
+	Q(8.3):GOTO:learnmnpi
+
+Q(setup): Do you want to set up a 10b5-1 plan?
+A: Yes
+	Q(9.1):GOTO:setupinstructions
+A: No
+	Q(9.2):GOTO:request
+A: I don't know
+	Q(9.3):GOTO:learn10b51
+
+Q(setup2): Do you want to set up a 10b5-1 plan?
+A: Yes
+	Q(10.1):GOTO:setupinstructions
+A: No
+	Q(10.2):GOTO:request
+Q(setup3): Do you want to set up a 10b5-1 plan?
+A: Yes
+	Q(11.1):GOTO:setupinstructions
+A: No
+	Q(11.2):GOTO:blackout3
+
+Q(request): Have you submitted a Trade Clearance Request form?
+A: Yes
+	Q(12.1):GOTO:approval
+A: No
+	Q(12.2):GOTO:submit
+
+
+Q(exercise): Do you want to exercise and hold stock options or excercise and trade?
+A: Exercise and hold
+	Q(13.1):GOTO:hold 
+A: Exercise and trade
+	Q(13.2):GOTO:10b51
+
+Q(ESPP): Were you enrolled in the ESPP program for the previous grant period?
+
+A: Yes
+	Q(14.1):GOTO:autoenroll
+A: No
+	Q(14.2):GOTO:ESPPeligibility
+A: I don't know
+	Q(14.3):GOTO:ESPPinstructions
+
+
+Q(ESPPeligibility): Did you join the company this year?
+A: Yes
+	Q(15.1):GOTO:month
+A: No
+	Q(15.2):GOTO:ESPPinstructions
+
+Q(month): What month did you join the company?
+A: June
+	Q(16.1):GOTO:period2
+A: December
+	Q(16.2):GOTO:period1
+A: Other
+	Q(16.3):GOTO:ESPPinstructions
+Q(period1): Which enrollment period would you like to enroll in?
+A: January 1 to June 30
+	Q(17.1):GOTO:inelig
+A: July 1 to December 31
+	Q(17.2):GOTO:ESPPinstructions
+
+Q(period2):Which enrollment period would you like to enroll in?
+A: January 1 to June 30
+	Q(18.1):GOTO:ESPPinstructions
+A: July 1 to December 31
+	Q(18.2):GOTO:inelig
+
+
+Q(learn10b51): Rule 10b5-1 plans allow individuals to plan securities transactions in advance of receiving material non-public information, and then carry out those pre-planned transactions at a later time. (<a href="https://us.etrade.com/l/executive-services/10b5-1-plans" target="_blank" rel="noreferrer noopener">More Information<a>) GOTO:setup2
+
+Q(learn10b512): Rule 10b5-1 plans allow individuals to plan securities transactions in advance of receiving material non-public information, and then carry out those pre-planned transactions at a later time. (<a href="https://us.etrade.com/l/executive-services/10b5-1-plans" target="_blank" rel="noreferrer noopener">More Information<a>) GOTO:setup3
+
+Q(autoenroll): You will automatically re-enroll for the next offering period at your elected contribution rate. Do you wish to change your contribution rate for the next offering period?
+A: Yes
+	Q(21.1):GOTO:contribution
+A: No
+	Q(21.2):GOTO:end
+
+Q(contribution): Please log into your <a href="https://us.etrade.com/e/t/user/login" target="_blank" rel="noreferrer noopener">E*TRADE Account</a>. In the top menu, click "Stock Plan" and select "My Account." You will have the option to change the contribution amount during the enrollment period, i.e., prior to the July 1 - December 31 or the January 1 - June 30 period.
+
+Q(end): No further action is needed.
+
+Q(learnmnpi): Examples of material non-public information include: non-public clinical data and methods, pending strategic transactions or collaborations, regulatory correspondence and timelines, and financing plans. (<a href="https://www.investopedia.com/terms/m/materialinsiderinformation.asp" target="_blank" rel="noreferrer noopener">More Information<a>) GOTO:ask
+ 
+Q(inelig): You are not eligible to enroll for this enrollment period. You are required to be at the company for at least 30 days to be eligibile to enroll.
+
+Q(approval): Please wait for approval from the legal team. Approval vetting usually takes one business day. Once approved, you may execute trades within two days of the approval.
+
+Q(submit): Please submit a <a href="https://relaytx.sharepoint.com/:b:/s/RelayAllCo/EUHKnWtdGOlVOfEA_-gLLd0BTJOlRrs_g8foDrQ5_0ikWA?e=0JjFRU" target="_blank" rel="noreferrer noopener">Trade Clearance Request Form</a> to <a href="mailto:tradeclearance@relaytx.com">Trade Clearance</a>. If you cannot access the link, the Trade Clearance Request Form may be found in the company sharepoint folder. Upon submission of the form, please allow one business day to receive notification of approval. Once approved, you may execute trades within two days of the approval.
+
+Q(hold):Please email <a href="mailto:tradeclearance@relaytx.com">Trade Clearance</a> with (1) the number of shares you wish to exercise, and (2) the date you want to exercise. There is no need to submit a Trade Clearance Request Form.
+
+Q(ask): Please email <a href="mailto:tradeclearance@relaytx.com">Trade Clearance</a> for any questions or concerns.
+
+Q(automatic): No need to take any further action. Trades under your 10b5-1 plan will execute automatically per your instructions.
+
+
+Q(ESPPinstructions): Please log into your <a href="https://us.etrade.com/e/t/user/login" target="_blank" rel="noreferrer noopener">E*TRADE Account</a>. In the top menu, click "Stock Plan" and select "My Account." You will see if you are currently enrolled, and you will have the option to enroll during the enrollment period at an allowed contribution amount.
+
+
+Q(stop): While in possession of MNPI, you are ineligibile to trade and may not set up a 10b5-1 plan. Please confirm with Legal that the MNPI has become "public" or is no longer "material" before considering your trade.
+
+Q(stop2): All trades are restricted during trade blackouts. 
+
+Q(stop3): 10b5-1 plans may not be created during blackout periods.
+
+Q(setupinstructions): Please log into your <a href="https://us.etrade.com/e/t/user/login" target="_blank" rel="noreferrer noopener">E*TRADE Account</a>. In the top menu, click "Stock Plan" and select "My Account." Then select "10b5-1 Plans" from the menu under the "Total Account Value." You will be able to set up automatic trades for a one year period. Plans are subject to the approval of the legal team. 
+
+
+
+
+
+
+
+
